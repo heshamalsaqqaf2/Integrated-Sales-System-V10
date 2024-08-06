@@ -16,10 +16,10 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header p-3">
-          <h3 class="card-title">
+          <h2 class="card-title">
             بيانات شركة
-            <span class="text-bold text-primary d-inline-block"> {{ $data['system_name'] }} </span>
-          </h3>
+            <p class="text-bold d-inline text-primary"> {{ $data['system_name'] }} </p>
+          </h2>
         </div>
         <div class="card-body">
           @if (@isset($data) && @!empty($data))
@@ -78,7 +78,7 @@
                           <span> {{ $time }}</span>
                           <span>{{ $newDateTimeType }}</span>
                           <span>- بواسطة |</span>
-                          <span class="badge badge-primary text-bold">{{ $data['updated_by_admin'] }}</span>
+                          <span class="badge badge-warning text-bold">{{ $data['updated_by_admin'] }}</span>
                         @else
                           <span class="text-warning">لايوجد أي تحديث حصل الى الأن !</span>
                         @endif
@@ -91,7 +91,7 @@
                 <div class="logoCompany">
                   <img class="" src="{{ asset('assets/uploads') . '/' . $data['photo'] }}" alt="شعار العميل">
                 </div>
-                <h5 class="mt-2">هوية الشركة</h5>
+                <p class="mt-2 text-bold text-lg-center">هوية الشركة</p>
               </div>
             </div>
           @else

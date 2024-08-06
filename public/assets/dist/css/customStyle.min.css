@@ -1,0 +1,23 @@
+.custom-width-table-cell {
+  width: 35%;
+  font-weight: bold;
+}
+.logoCompany {
+  width: 80%;
+  border-radius: 100%;
+  border: 1px dashed #999;
+}
+.logoCompany img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .media-small-screen {
+    flex-direction: column-reverse;
+  }
+  .logoCompany {
+    width: auto;
+  }
+}

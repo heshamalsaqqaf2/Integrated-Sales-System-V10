@@ -80,7 +80,7 @@
                           <span>- بواسطة |</span>
                           <span class="badge badge-warning text-bold">{{ $data['updated_by_admin'] }}</span>
                         @else
-                          <span class="text-warning">لايوجد أي تحديث حصل الى الأن !</span>
+                          <span>لايوجد أي تحديث حصل الى الأن !</span>
                         @endif
                       </td>
                     </tr>
@@ -89,9 +89,13 @@
               </div>
               <div class="col-lg-3 d-flex flex-column justify-content-center align-items-center">
                 <div class="logoCompany">
-                  <img class="" src="{{ asset('assets/uploads') . '/' . $data['photo'] }}" alt="شعار العميل">
+                  <img src="{{ asset('assets/uploads') . '/' . $data['photo'] }}" alt="شعار العميل">
                 </div>
-                <p class="mt-2 text-bold text-lg-center">هوية الشركة</p>
+                <p class="mt-2 text-bold text-lg-center">شعار الشركة</p>
+                <a href="{{ route('admin.adminPanelSetting.edit') }}" class="btn btn-success">
+                  تعديل البيانات
+                  <i class="fas fa-user-edit fa-1x"></i>
+                </a>
               </div>
             </div>
           @else

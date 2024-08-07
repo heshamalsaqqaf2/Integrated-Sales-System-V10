@@ -1,3 +1,4 @@
+/* Start Style Page Index Admin Panel Settings */
 .custom-width-table-cell {
   width: 35%;
   font-weight: bold;
@@ -13,6 +14,11 @@
   object-fit: cover;
   border-radius: 50%;
 }
+.image-width-medium{
+    width: 40%;
+}
+/* End Style Page Index Admin Panel Settings */
+/* Start Media Query */
 @media (max-width: 1000px) {
   .media-small-screen {
     flex-direction: column-reverse;
@@ -21,3 +27,4 @@
     width: auto;
   }
 }
+/* End Media Query */

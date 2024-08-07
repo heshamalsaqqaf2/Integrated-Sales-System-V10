@@ -18,4 +18,10 @@ class AdminPanelSettingsController extends Controller
         }
         return view('admin.admin_panel_settings.index', ['data' => $data]);
     }
+
+    public function edit()
+    {
+        $data = AdminPanelSetting::where('com_code', auth()->user()->com_code)->first();
+        return view('admin.admin_panel_settings.edit', ['data' => $data]);
+    }
 }

@@ -22,7 +22,7 @@
           </h2>
         </div>
         <div class="card-body">
-          @if (@isset($data) && @!empty($data))
+          @if (@isset($data) && !@empty($data))
             <div class="row media-small-screen">
               <div class="col-12 col-lg-9">
                 <table class="table table-bordered table-hover">
@@ -106,30 +106,3 @@
     </div>
   </div>
 @endsection
-
-
-{{-- <tr>
-            <th>Rendering </th>
-            <th>Browser</th>
-            <th>Platform(s)</th>
-            <th>Engine version</th>
-            <th>CSS grade</th>
-            </tr> --}}
-
-
-{{-- <tbody>
-              <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 4.0</td>
-                <td>Win 95+</td>
-                <td>Hesham Zohir</td>
-                <td>10002156</td>
-              </tr>
-              <tr>
-                <td>Arident</td>
-                <td>Internet Explorer 6.0</td>
-                <td>Win 95+</td>
-                <td>Zohir Radi</td>
-                <td>771728424</td>
-              </tr>
-            </tbody> --}}

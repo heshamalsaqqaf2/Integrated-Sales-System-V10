@@ -7,17 +7,18 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="keywords" content="System">
   <meta name="description" content="Sales System">
+  {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
   <title>@yield('title')</title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
-  <!-- File Pond -->
-  <link rel="stylesheet" href="{{ asset('assets/dist/css/filePondPluginImagePreview.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/dist/css/filePond.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/dist/css/customStyle.min.css') }}">
+  <!-- File Pond -->
+  <link rel="stylesheet" href="{{ asset('assets/dist/css/filePondPluginImagePreview.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/dist/css/filePond.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="{{ asset('assets/fonts/Almarai/almaraiFont.min.css') }}">
 </head>
@@ -34,19 +35,13 @@
   <!-- Bootstrap 4 -->
   <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <!-- DataTables -->
-  <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+  {{--  <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script> --}}
   <script src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
-  <!-- filePond App -->
-  <script src="{{ asset('assets/dist/js/libraryFilePond/filePondPluginImagePreview.min.js') }}"></script>
-  <script src="{{ asset('assets/dist/js/libraryFilePond/filePond.min.js') }}"></script>
-  <script>
-    const inputElement = document.querySelector('input[type="file"]');
-    const pond = FilePond.create(inputElement);
-  </script>
   <!-- AdminLTE App -->
   <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
-  <!-- Data Table Custmaization -->
-  <script>
+
+  <!-- Data Table Customization -->
+  {{-- <script>
     $(function() {
       $("#example2").DataTable();
       $('#example1').DataTable({
@@ -58,7 +53,7 @@
         "autoWidth": true,
       });
     });
-  </script>
+  </script> --}}
 </body>
 
 </html>

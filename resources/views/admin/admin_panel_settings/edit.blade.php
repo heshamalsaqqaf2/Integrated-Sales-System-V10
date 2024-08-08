@@ -23,79 +23,53 @@
         </div>
         <div class="card-body">
           @if (@isset($data) && @!empty($data))
-            <form class="needs-validation" novalidate>
+            <form method="post" action="{{ route('admin.adminPanelSetting.update') }}" enctype="multipart/form-data">
+              @csrf
               <div class="row">
                 <div class="col-lg-7">
                   <div class="form-row">
                     <div class="col-lg-8 col-md-12 mb-3">
-                      <label for="validationCustom01">إسم الشركة التجاري</label>
-                      <input type="text" class="form-control" id="validationCustom01" required value="{{ $data['system_name'] }}">
-                      <div class="invalid-feedback">
-                        الرجاء إدخال إسم الشركة في الحقل
-                      </div>
+                      <label for="system_name">إسم الشركة التجاري</label>
+                      <input type="text" class="form-control" id="system_name" name="system_name" value="{{ $data['system_name'] }}">
+                      @error('system_name')
+                        <span class="text-danger d-block mt-1">{{ $message }}</span>
+                      @enderror
                     </div>
                     <div class="col-lg-4 col-md-12 mb-3">
-                      <label for="validationCustom02">هاتف الشركة</label>
-                      <input type="number" class="form-control" id="validationCustom02" required value="{{ $data['phone'] }}">
-                      <div class="invalid-feedback">
-                        الرجاء إدخال رقم الشركة في الحقل
-                      </div>
+                      <label for="phone">هاتف الشركة</label>
+                      <input type="number" class="form-control" id="phone" name="phone" value="{{ $data['phone'] }}">
+                      @error('phone')
+                        <span class="text-danger d-block mt-1">{{ $message }}</span>
+                      @enderror
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-lg-12 mb-3">
-                      <label for="validationCustom03">موقع الشركة</label>
-                      <input type="text" class="form-control" id="validationCustom03" required value="{{ $data['address'] }}">
-                      <div class="invalid-feedback">
-                        الرجاء إدخال موقع الشركة في الحقل
-                      </div>
+                      <label for="address">عنوان موقع الشركة</label>
+                      <input type="text" class="form-control" id="address" name="address" value="{{ $data['address'] }}">
                     </div>
+                    @error('address')
+                      <span class="text-danger d-block mt-1">{{ $message }}</span>
+                    @enderror
                   </div>
                   <div class="form-row">
                     <div class="col-md-12 mb-3">
-                      <label for="validationCustom04">رسالة الشركة التنبيه</label>
-                      <input type="text" class="form-control" id="validationCustom04" required value="{{ $data['general_alert'] }}">
-                      <div class="invalid-feedback">
-                        الرجاء إدخال رسالة الشركة في الحقل
-                      </div>
+                      <label for="general_alert">رسالة تنبية أعلى الشاشة</label>
+                      <input type="text" class="form-control" id="general_alert" name="general_alert" value="{{ $data['general_alert'] }}">
                     </div>
                   </div>
                 </div>
-                {{-- ! Start Upload Images With FilePond --}}
                 <div class="col-lg-5 d-flex justify-content-center align-items-center flex-column">
-                  <div class="logoCompany mb-3 image-width-medium">
-                    <img src="{{ asset('assets/uploads') . '/' . $data['photo'] }}" alt="شعار العميل">
-                  </div>
-                  <input class="w-100" type="file" hidden required />
+                  {{-- <input class="w-100" type="file" id="photo" name="photo" /> --}}
                 </div>
-                {{-- ! End Upload Images --}}
-                <button class="btn btn-primary mb-3" type="submit">تعديل البيانات</button>
+              </div>
+              <button type="submit" class="btn btn-primary mb-3">تعديل البيانات</button>
             </form>
+          @else
+            <div class="alert alert-danger">عذرا لا يوجد بيانات لعرضها</div>
+          @endif
+
         </div>
-        {{-- TODO: Start Stop Propagation Custom Bootstrap Validation --}}
-        <script>
-          (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-              var forms = document.getElementsByClassName('needs-validation');
-              var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                  if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                  }
-                  form.classList.add('was-validated');
-                }, false);
-              });
-            }, false);
-          })();
-        </script>
-        {{-- TODO: End Stop Propagation Custom Bootstrap Validation --}}
-      @else
-        <div class="alert alert-danger">عذرا لا يوجد بيانات لعرضها</div>
-        @endif
       </div>
     </div>
-  </div>
-  </div>
-@endsection
+  @endsection

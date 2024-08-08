@@ -13,6 +13,8 @@
 @endsection
 @section('content-body')
   <div class="row">
+    <a href="{{ route('admin.adminPanelSetting.post') }}" class="btn btn-primary mb-3">Save</a>
+
     <div class="col-12">
       <style>
         .image-banar {

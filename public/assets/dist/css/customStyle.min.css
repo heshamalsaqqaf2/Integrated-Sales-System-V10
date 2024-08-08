@@ -14,8 +14,15 @@
   object-fit: cover;
   border-radius: 50%;
 }
-.image-width-medium{
-    width: 40%;
+.image-width-medium {
+  width: 40%;
+}
+.no-image {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 /* End Style Page Index Admin Panel Settings */
 /* Start Media Query */

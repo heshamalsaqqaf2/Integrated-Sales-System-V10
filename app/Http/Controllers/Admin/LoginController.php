@@ -22,7 +22,6 @@ class LoginController extends Controller
 			return redirect()->route('admin.showLogin')->with(['error' => 'عفوا بيانات تسجيل الدخول غير صحيحة !!']);
 	}
 
-
 	public function logout(): RedirectResponse
 	{
 		auth()->logout();
